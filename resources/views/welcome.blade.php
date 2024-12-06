@@ -15,7 +15,7 @@
         let sw = await navigator.serviceWorker.ready;
         let push = await sw.pushManager.subscribe({
             userVisibleOnly: true,
-            applicationServerKey: 'BOUHBF1-OSdDD9Ck9oCwtKi7nFA4Qdym-AMTfaSUvo6KS_vJwKe5o5XLd7nitSJeP3HKNTKQYKJ6hyNtvSX8-pQ'
+            applicationServerKey: '{{ config('app.vapid_public_key') }}'
         });
 
         let xhr = new XMLHttpRequest();

@@ -25,9 +25,9 @@ class PushController extends Controller
     {
         $webPush = new WebPush([
             'VAPID' => [
-                'subject' => 'http://localhost',
-                'publicKey' => 'BOUHBF1-OSdDD9Ck9oCwtKi7nFA4Qdym-AMTfaSUvo6KS_vJwKe5o5XLd7nitSJeP3HKNTKQYKJ6hyNtvSX8-pQ',
-                'privateKey' => 'iiHoSnq8esDropZ4YbIPhllB1jg9Moy6lQiZj5_O6oQ'
+                'subject' => 'https://push.mohsenfathipour.com',
+                'publicKey' => config('app.vapid_public_key'),
+                'privateKey' => config('app.vapid_private_key')
             ]
         ]);
         $subscription = Subscription::create(json_decode($push->pushdata, true));
